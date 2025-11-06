@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Executive-grade comparison of Vanilla JS vs .NET Core + SPA for ERP systems">
+    <title>ERP Tech Stack Comparison | Decision Tool</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <div class="brand">
+                    <img src="assets/logo.svg" alt="ERP Comparison" class="logo" width="40" height="40">
+                    <h1>ERP Tech Stack Comparison</h1>
+                </div>
+                <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                    <div id="tabs-container"></div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main" role="main">
+        <div class="container">
+            <!-- Intro Section -->
+            <section id="intro" class="content-section" data-tab="intro">
+                <h2>Executive Summary</h2>
+                <div class="intro-grid">
+                    <div class="card">
+                        <h3>Purpose & Scope</h3>
+                        <p>This decision tool compares two architectural approaches for building enterprise ERP systems:</p>
+                        <ul>
+                            <li><strong>Approach A:</strong> Vanilla JavaScript + Web API + HTML only</li>
+                            <li><strong>Approach B:</strong> .NET Core backend + Angular or React frontend</li>
+                        </ul>
+                        <p>Use this interactive tool to evaluate trade-offs across 11 key criteria, customize weighting based on your priorities, and generate a recommendation for your leadership team.</p>
+                    </div>
+
+                    <div class="card highlight-card">
+                        <h3>When Vanilla JS Wins</h3>
+                        <ul>
+                            <li>✓ Rapid prototyping and time-critical MVPs</li>
+                            <li>✓ Teams with strong web fundamentals</li>
+                            <li>✓ Zero-build deployment pipelines</li>
+                            <li>✓ Maximum control over every byte</li>
+                            <li>✓ Internal tools with limited feature scope</li>
+                            <li>✓ Performance-critical lightweight interfaces</li>
+                        </ul>
+                    </div>
+
+                    <div class="card highlight-card">
+                        <h3>When .NET Core + SPA Wins</h3>
+                        <ul>
+                            <li>✓ Large, distributed development teams</li>
+                            <li>✓ Complex UI with many reusable components</li>
+                            <li>✓ Need for mature ecosystem (UI libraries, testing, state management)</li>
+                            <li>✓ Long-term maintenance and team scalability</li>
+                            <li>✓ Enterprise integration requirements (SSO, RBAC, audit)</li>
+                            <li>✓ Rich developer tooling and IDE support</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Decision Criteria Section -->
+            <section id="criteria" class="content-section hidden" data-tab="criteria">
+                <h2>Decision Criteria</h2>
+                <p class="section-intro">We evaluate both approaches across 11 key criteria that matter to enterprise ERP systems. Each criterion can be weighted according to your organization's priorities.</p>
+                <div id="kpi-cards-container"></div>
+            </section>
+
+            <!-- Deep-Dive Comparison Section -->
+            <section id="deep-dive" class="content-section hidden" data-tab="deep-dive">
+                <h2>Deep-Dive Comparison</h2>
+                <p class="section-intro">Detailed analysis of each approach across all decision criteria.</p>
+                <div id="deep-dive-content"></div>
+            </section>
+
+            <!-- Decision Matrix Section -->
+            <section id="matrix" class="content-section hidden" data-tab="matrix">
+                <h2>Interactive Decision Matrix</h2>
+                <p class="section-intro">Adjust weights and scores to match your organization's priorities. Results update in real-time.</p>
+                <div id="decision-matrix-container"></div>
+            </section>
+
+            <!-- TCO Model Section -->
+            <section id="tco" class="content-section hidden" data-tab="tco">
+                <h2>Total Cost of Ownership</h2>
+                <p class="section-intro">Model the financial impact of each approach over 3 years.</p>
+                <div id="tco-container"></div>
+            </section>
+
+            <!-- Risk Register Section -->
+            <section id="risks" class="content-section hidden" data-tab="risks">
+                <h2>Risk Register</h2>
+                <p class="section-intro">Identify, assess, and plan mitigation strategies for key risks in both approaches.</p>
+                <div id="risk-register-container"></div>
+            </section>
+
+            <!-- Hiring & Market Section -->
+            <section id="hiring" class="content-section hidden" data-tab="hiring">
+                <h2>Hiring & Market Availability</h2>
+                <div id="hiring-content"></div>
+            </section>
+
+            <!-- Security & Compliance Section -->
+            <section id="security" class="content-section hidden" data-tab="security">
+                <h2>Security & Compliance</h2>
+                <div id="security-content"></div>
+            </section>
+
+            <!-- Testing & Quality Section -->
+            <section id="testing" class="content-section hidden" data-tab="testing">
+                <h2>Testing & Quality</h2>
+                <div id="testing-content"></div>
+            </section>
+
+            <!-- How Vanilla Works Section -->
+            <section id="how-vanilla" class="content-section hidden" data-tab="how-vanilla">
+                <h2>Making Vanilla JS Practical</h2>
+                <div id="vanilla-guide-content"></div>
+            </section>
+
+            <!-- Cursor AI Preference Section -->
+            <section id="cursor-preference" class="content-section hidden" data-tab="cursor-preference">
+                <h2>Cursor AI Performance Comparison</h2>
+                <p class="section-intro">How effectively does Cursor AI assist development in each tech stack? Comprehensive analysis across all AI-assisted development aspects.</p>
+                <div id="cursor-preference-content"></div>
+            </section>
+
+            <!-- Recommendation Section -->
+            <section id="recommendation" class="content-section hidden" data-tab="recommendation">
+                <h2>Executive Recommendation</h2>
+                <p class="section-intro">Generate a customized recommendation based on your scoring and risk assessment.</p>
+                <div id="recommendation-container"></div>
+            </section>
+
+            <!-- Real World Examples Section -->
+            <section id="real-world" class="content-section hidden" data-tab="real-world">
+                <h2>🌍 Real-World Examples</h2>
+                <p class="section-intro">Learn about actual ERP systems and major companies using Vanilla JavaScript.</p>
+                <div id="real-world-container"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 ERP Tech Stack Comparison Tool. Built with Vanilla JS to prove a point.</p>
+            <p>No frameworks. No bundlers. Just standards.</p>
+        </div>
+    </footer>
+
+    <script src="js/app-bundle.js"></script>
+</body>
+</html>
