@@ -269,6 +269,10 @@ pre code {
     gap: var(--spacing-md);
 }
 
+[dir="rtl"] .header-content {
+    justify-content: space-between;
+}
+
 .brand {
     display: flex;
     align-items: center;
@@ -2289,5 +2293,125 @@ tbody tr:last-child td {
     font-size: var(--font-size-lg);
     color: var(--color-accent);
     font-weight: 700;
+}
+
+/* ========================================
+   Language Switcher
+   ======================================== */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-bg-card);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    white-space: nowrap;
+}
+
+.lang-switcher:hover {
+    background: var(--color-bg-hover);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.lang-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.lang-text {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   RTL Support for Arabic
+   ======================================== */
+[dir="rtl"] body {
+    direction: rtl;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+/* Header RTL fixes */
+[dir="rtl"] .brand .logo {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+[dir="rtl"] .brand h1 {
+    font-size: 1.4rem;
+    font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-weight: 600;
+}
+
+/* Tabs RTL */
+[dir="rtl"] .tabs {
+    direction: rtl;
+}
+
+[dir="rtl"] .tab-button {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+[dir="rtl"] .card {
+    text-align: right;
+}
+
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+    padding-right: var(--spacing-xl);
+    padding-left: 0;
+}
+
+[dir="rtl"] .tooltip-label::after {
+    right: auto;
+    left: 50%;
+    transform: translateX(50%);
+}
+
+[dir="rtl"] .tooltip-label:hover::before {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+[dir="rtl"] pre code {
+    text-align: left;
+    direction: ltr;
+}
+
+[dir="rtl"] table {
+    direction: rtl;
+}
+
+[dir="rtl"] .intro-grid,
+[dir="rtl"] .kpi-grid {
+    direction: rtl;
+}
+
+/* Responsive adjustments for header */
+@media (max-width: 1024px) {
+    .header-content {
+        flex-wrap: wrap;
+    }
+    
+    .lang-switcher {
+        order: 3;
+        margin-top: var(--spacing-md);
+    }
+    
+    [dir="rtl"] .lang-switcher {
+        order: 3;
+    }
 }
 
