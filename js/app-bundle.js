@@ -531,11 +531,36 @@
         // Re-render all tabs
         initTabs();
         
-        // Force re-render of current page by clearing initialized flags
-        document.querySelectorAll('[data-initialized]').forEach(el => {
-            el.removeAttribute('data-initialized');
-            el.innerHTML = '';
+        // Force re-render of current page by clearing initialized flags and content
+        const containerIds = [
+            'kpi-cards-container',
+            'deep-dive-content',
+            'decision-matrix-container',
+            'tco-container',
+            'risk-register-container',
+            'hiring-content',
+            'security-content',
+            'testing-content',
+            'vanilla-guide-content',
+            'cursor-preference-content',
+            'recommendation-container',
+            'real-world-container',
+            'tools-conversion-container',
+            'final-decision-container',
+            'migration-container'
+        ];
+        
+        containerIds.forEach(id => {
+            const container = document.getElementById(id);
+            if (container) {
+                delete container.dataset.initialized;
+                container.innerHTML = '';
+            }
         });
+        
+        // Force re-render by temporarily clearing current route
+        const previousRoute = router.currentRoute;
+        router.currentRoute = null;
         
         // Re-render current page
         router.handleRouteChange();
